@@ -1,0 +1,10 @@
+<form class="dynamic-form" [formGroup]="form" (submit)="handleSubmit($event)">
+  <ng-container *ngFor="let fieldKey of objectGetKeys(config);">
+    key: {{ fieldKey }}
+    <ng-container dynamicField [config]="config[fieldKey]" [name]="fieldKey" [group]="form">
+    </ng-container>
+    <br>
+  </ng-container>
+  <br>
+  <input *ngIf="true" type="submit" name="submit" value="Submit"> 
+</form>
